@@ -66,13 +66,40 @@ public class VarastoTest {
     }
 
     @Test
+    public void lisaaVarastoonNegativinen() {
+        varasto.lisaaVarastoon(-5);
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+        @Test
+    public void lisaaVarastoonLiikaa() {
+        varasto.lisaaVarastoon(12);
+        assertEquals(10, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void otaVarastostaNegativinen() {
+        varasto.otaVarastosta(-5);
+        // varastossa pitäisi olla tilaa 10
+        assertEquals(10, varasto.paljonkoMahtuu(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void otaEnemmanKuinSaldo() {
+        varasto.lisaaVarastoon(5);
+        double saatuMaara = varasto.otaVarastosta(15);
+        // varastossa pitäisi olla tilaa 10
+        assertEquals(5, saatuMaara, vertailuTarkkuus);
+    }
+
+    @Test
     public void konstr() {
         varasto = new Varasto(-1);
         varasto = new Varasto(0);
-        varasto = new Varasto(1,1);
-        varasto = new Varasto(1,2);
-        varasto = new Varasto(-1,2);
-        varasto = new Varasto(-1,-1);
+        varasto = new Varasto(1, 1);
+        varasto = new Varasto(1, 2);
+        varasto = new Varasto(-1, 2);
+        varasto = new Varasto(-1, -1);
         varasto.toString();
     }
 }
