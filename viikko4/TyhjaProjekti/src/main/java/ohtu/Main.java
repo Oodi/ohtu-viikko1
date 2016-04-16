@@ -35,6 +35,7 @@ public class Main {
             yht += sub.getDone();
             h += sub.getHours();
         }
+        //
 
         System.out.println("Opiskelijanumero: " + subs[0].getStudent_number());
         for (Submission submission : subs) {
