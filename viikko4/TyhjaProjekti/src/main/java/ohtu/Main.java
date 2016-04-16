@@ -37,6 +37,7 @@ public class Main {
         }
         //
         //
+        //
 
         System.out.println("Opiskelijanumero: " + subs[0].getStudent_number());
         for (Submission submission : subs) {
