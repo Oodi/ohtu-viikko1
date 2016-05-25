@@ -1,6 +1,8 @@
 language: java
 env:
-  - TEST_DIR=Viikko1
+  - TEST_DIR=Viikko4/LoginWeb2
 script: cd $TEST_DIR 
+  - mvn test
+  - mvn integration-test
 after_success:
   - mvn clean cobertura:cobertura coveralls:report
