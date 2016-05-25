@@ -1,7 +1,6 @@
 language: java
-env:
-  - TEST_DIR=LoginWeb2  
-  before_script: cd Viikko4
+env: TEST_DIR=LoginWeb2  
+before_script: cd Viikko4
 script:  
   - mvn test
   - mvn integration-test
